@@ -37,10 +37,12 @@ Open a terminal and run for install all dependecies
 ```javascript
 $ npm install
 ```
+
 Next, run this for start a angular application
 ```javascript
 $ npm run start
 ```
+
 In another terminal, run this command for start a database
 ```javascript
 $ npm run server
