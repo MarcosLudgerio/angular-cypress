@@ -14,7 +14,7 @@
 <div id="desc"/>
 
 ## 📝 Desciption
-Todo list project using Angular 9 and [Cypress.io](https://cypress.io) to demonstrate E2E tests. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
+This application is a todo list project using Angular 9 and [Cypress.io](https://cypress.io) to demonstrate E2E tests. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
 
 <div id="linc"/>
