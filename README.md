@@ -30,11 +30,27 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ```sh
 $ git clone https://github.com/MarcosLudgerio/angular-cypress
-$ cd test-api-python
+$ cd angular-cypress
+```
+
+Open a terminal and run for install all dependecies
+```javascript
 $ npm install
-$ npm start
+```
+Next, run this for start a angular application
+```javascript
+$ npm run start
+```
+In another terminal, run this command for start a database
+```javascript
+$ npm run server
+```
+
+Finally, start the cypress for run tests
+```javascript
 $ npm run cypress
 ```
+
 
 <div id="autor" />
 
