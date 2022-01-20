@@ -1,7 +1,8 @@
 describe("Form submit", () => {
 
+    const newTodo = { id: 456, title: "Runnig in the morning", completed: false };
+
     it("Adds a new todo item", () => {
-        const newTodo = { id: 456, title: "Runnig in the morning", completed: false };
         cy.server();
         cy.route({
             method: 'POST',
@@ -20,6 +21,27 @@ describe("Form submit", () => {
         cy.wait('@second-load');
 
         cy.get('.task-wrapper').should('have.length', 6);
+    });
+
+    it.only("Shows error message for a failed submission", () => {
+        cy.server();
+        cy.route({
+            method: 'POST',
+            url: '/ToDoModels',
+            response: {},
+            status: 500
+        }).as('save');
+
+        cy.seedAndVisit();
+
+        cy.get("#title").type(newTodo.title).type('{enter}');
+        cy.wait('@save');
+
+        cy.on('window:alert', text => {
+            expect(text).to.contains('500');
+        });
+
+        cy.get('.task-wrapper').should('have.length', 5);
     });
 
 });
