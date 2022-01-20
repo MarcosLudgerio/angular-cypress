@@ -4,16 +4,13 @@ describe("Typing in input", () => {
         cy.seedAndVisit();
     });
 
-    afterEach(() => {
-        cy.seedAndVisit();
-    });
-
     it.only("Writing a long text in input", () => {
         cy.fixture('invalid').then(text => {
-            cy.get('#title').type(text.textCharacters);
-            cy.get('#title').should('have.value', text.textCharacters);
+            // cy.get('#title').type(text.textCharacters);
+            // cy.get('#title').should('have.value', text.textCharacters);
+            cy.get("#title").type(text.textCharacters).type('{enter}');
         });
-        cy.get("[id^='submit']").click();
+
 
     });
 
