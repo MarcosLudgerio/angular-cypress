@@ -36,9 +36,6 @@ describe("Typing in input", () => {
         elementButton.click(); // Click in edit button
 
         cy.get("#title").clear().type(newTodo.title).should('have.value', newTodo.title).type('{enter}'); // update title task
-        // cy.wait('@save');
-        // cy.wait('@second-load');
-        // cy.get().to.be(); // assert if update is sucessful
     });
 
 });
