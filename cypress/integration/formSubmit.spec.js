@@ -2,7 +2,7 @@ describe("Form submit", () => {
 
     const newTodo = { id: 456, title: "Runnig in the morning", completed: false };
 
-    it("Adds a new todo item", () => {
+    it.only("Adds a new todo item", () => {
         cy.server();
         cy.route({
             method: 'POST',
@@ -23,7 +23,7 @@ describe("Form submit", () => {
         cy.get('.task-wrapper').should('have.length', 6);
     });
 
-    it.only("Shows error message for a failed submission", () => {
+    it("Shows error message for a failed submission", () => {
         cy.server();
         cy.route({
             method: 'POST',
