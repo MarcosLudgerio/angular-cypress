@@ -28,10 +28,8 @@ describe("Typing in input", () => {
     });
 
 
-    it("Edit a todo item", () => {
-        cy.get('.task-wrapper').then(listTodos => {
-            expect(listTodos).to.equals("one");
-        });
+    it.only("Edit a todo item", () => {
+        cy.get('.task-wrapper button.edit').first().click();
     });
 
 });
