@@ -2,6 +2,7 @@
 
 <div align="center" display="flex" style="justify-content:flex-start;">
       <img align="center" alt="jest" height="60" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
+      <img align="center" alt="angular" height="60" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg" />
 </div>
 
 <p align="center">
