@@ -1,7 +1,7 @@
 # Angular - Cypress - Automatized Tests
 
 <div align="center" display="flex" style="justify-content:flex-start;">
-      <img align="center" alt="cypress" height="60" width="60" src="https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg" />
+      <img align="center" alt="cypress" height="60" width="60" src="https://cloud.githubusercontent.com/assets/1268976/20607953/d7ae489c-b24a-11e6-9cc4-91c6c74c5e88.png" />
       <img align="center" alt="angular" height="60" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg" />
 </div>
 
