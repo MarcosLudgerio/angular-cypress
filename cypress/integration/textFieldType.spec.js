@@ -27,12 +27,7 @@ describe("Typing in input", () => {
 
 
     it("Edit a todo item", () => {
-
-        let elementButton = cy.get('.task-wrapper button.edit').first();
-
-
-        elementButton.click(); // Click in edit button
-
+        cy.get('.task-wrapper button.edit').first().click(); // Click in edit button
         cy.get("#title").clear().type(newTodo.title).should('have.value', newTodo.title).type('{enter}'); // update title task
     });
 
