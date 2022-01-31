@@ -1,8 +1,6 @@
-const { assert } = require("console");
-
 describe("Typing in input", () => {
 
-    const newTodo = { id: 456, title: "Runnig in the morning", completed: false };
+    const newTodo = { id: 55, title: "Runnig in the morning", completed: false };
 
     beforeEach(() => {
         cy.seedAndVisit();
@@ -28,7 +26,7 @@ describe("Typing in input", () => {
     });
 
 
-    it.only("Edit a todo item", () => {
+    it("Edit a todo item", () => {
 
         let elementButton = cy.get('.task-wrapper button.edit').first();
 
@@ -36,6 +34,11 @@ describe("Typing in input", () => {
         elementButton.click(); // Click in edit button
 
         cy.get("#title").clear().type(newTodo.title).should('have.value', newTodo.title).type('{enter}'); // update title task
+    });
+
+    it("Delete a todo item", () => {
+        cy.get('.task-wrapper button.delete').first().click();
+        cy.get('.task-wrapper').should('have.length', 5);
     });
 
 });
