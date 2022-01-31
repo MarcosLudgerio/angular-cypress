@@ -31,12 +31,18 @@ describe("Typing in input", () => {
         cy.get("#title").clear().type(newTodo.title).should('have.value', newTodo.title).type('{enter}'); // update title task
     });
 
-    it("Delete a todo item", () => {
-        cy.get('.task-wrapper button.delete').first().click();
-        cy.get('.task-wrapper').should('have.length', 5);
+    it.only("Delete a todo item", () => {
+        cy.server();
+
+        cy.route({
+            method: 'DELETE',
+            url: '/ToDoModels',
+            response: newTodo
+        })
+        cy.get('.task-wrapper').should('have.length', 4);
     });
 
-    it.only("Done a specific todo", () => {
+    it("Done a specific todo", () => {
         cy.get("span[class='title']").contains('One').click();
     });
 
