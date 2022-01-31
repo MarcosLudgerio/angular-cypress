@@ -36,4 +36,8 @@ describe("Typing in input", () => {
         cy.get('.task-wrapper').should('have.length', 5);
     });
 
+    it.only("Done a specific todo", () => {
+        cy.get("span[class='title']").contains('One').click();
+    });
+
 });
