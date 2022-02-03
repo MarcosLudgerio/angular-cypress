@@ -36,10 +36,10 @@ describe("Typing in input", () => {
 
         cy.route({
             method: 'DELETE',
-            url: '/ToDoModels',
-            response: newTodo
-        })
-        cy.get('.task-wrapper').should('have.length', 4);
+            url: '/ToDoModels/5'
+        });
+
+        cy.get('.task-wrapper').should('have.length', 5);
     });
 
     it("Done a specific todo", () => {
