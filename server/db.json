@@ -1,23 +1,8 @@
 {
   "ToDoModels": [
     {
-      "id": 1,
-      "title": "One",
-      "completed": true
-    },
-    {
-      "id": 2,
-      "title": "TEste 2",
-      "completed": false
-    },
-    {
       "id": 3,
       "title": "Teste 3",
-      "completed": false
-    },
-    {
-      "id": 4,
-      "title": "Teste 4",
       "completed": false
     }
   ]

@@ -33,13 +33,23 @@ describe("Typing in input", () => {
 
     it.only("Delete a todo item", () => {
         cy.server();
-
         cy.route({
-            method: 'DELETE',
-            url: '/ToDoModels/5'
-        });
+            method: 'POST',
+            url: '/ToDoModels',
+            response: newTodo
+        }).as('save');
 
-        cy.get('.task-wrapper').should('have.length', 5);
+        cy.seedAndVisit();
+
+        cy.fixture('todos').then(text => {
+            cy.route('GET', '/ToDoModels', [...text, newTodo]).as('second-load');
+        });
+        cy.wait('@save');
+        cy.wait('@second-load');
+
+        cy.get("span[class='title']").contains(newTodo.title).click();
+
+        cy.get('.task-wrapper').should('have.length', 6);
     });
 
     it("Done a specific todo", () => {
